@@ -86,4 +86,5 @@ target/
 *.swo
 
 # Mypy cache
-.mypy_cache/
+.mypy_cache
+/images
