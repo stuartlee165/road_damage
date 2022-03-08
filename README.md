@@ -1,57 +1,24 @@
-road_damage
-==============================
+# Road Damage Model Identifier Training and Implementation
+## An Image Segmentation Project Using FastAi
 
-A short description of the project.
+This was a project to create a CNN model which can identify road damage from uploaded images. I used the FastAi library and trained a unet_learner with a ResNet50 architecture. The project included sourcing image data, manually labelling 100 images, model training and implementation. 
 
-Project Organization
-------------
+## Data Collection
+Initially I scraped images of 'damaged roads' from duckduckgo, however the range of images found was very broad. I wanted to focus on car dash-cam style photos only and found a pre compiled dataset RDD2020 which comprises 26,336 road images from India, Japan, and the Czech Republic with more than 31,000 instances of road damage. The dataset captures four types of road damage: longitudinal cracks, transverse cracks, alligator cracks, and potholes. While the dataset includes labeling data I wanted to create my own labels in order to run the process from scratch. Further, the labels included in the dataset are rectangular where as the method I employed uses polygons. 
 
-    ├── LICENSE
-    ├── Makefile           <- Makefile with commands like `make data` or `make train`
-    ├── README.md          <- The top-level README for developers using this project.
-    ├── data
-    │   ├── external       <- Data from third party sources.
-    │   ├── interim        <- Intermediate data that has been transformed.
-    │   ├── processed      <- The final, canonical data sets for modeling.
-    │   └── raw            <- The original, immutable data dump.
-    │
-    ├── docs               <- A default Sphinx project; see sphinx-doc.org for details
-    │
-    ├── models             <- Trained and serialized models, model predictions, or model summaries
-    │
-    ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-    │                         the creator's initials, and a short `-` delimited description, e.g.
-    │                         `1.0-jqp-initial-data-exploration`.
-    │
-    ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-    │
-    ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-    │   └── figures        <- Generated graphics and figures to be used in reporting
-    │
-    ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-    │                         generated with `pip freeze > requirements.txt`
-    │
-    ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
-    ├── src                <- Source code for use in this project.
-    │   ├── __init__.py    <- Makes src a Python module
-    │   │
-    │   ├── data           <- Scripts to download or generate data
-    │   │   └── make_dataset.py
-    │   │
-    │   ├── features       <- Scripts to turn raw data into features for modeling
-    │   │   └── build_features.py
-    │   │
-    │   ├── models         <- Scripts to train models and then use trained models to make
-    │   │   │                 predictions
-    │   │   ├── predict_model.py
-    │   │   └── train_model.py
-    │   │
-    │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
-    │       └── visualize.py
-    │
-    └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
+Labelling the data I used the following programmes:
+
+<a href="https://github.com/wkentaro/labelme" target="_blank"> Labelme</a>
+<a href="https://github.com/fcakyon/labelme2coco" target="_blank"> Labelem2coco</a>
+
+<p align="center">
+  <img src="https://github.com/stuartlee165/car_damage_classifier/blob/main/images/carapp.png" width="400"/>
+</p>
 
 
---------
 
-<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
+
+### Web App Output
+
+
+<a href="https://course.fast.ai/" target="_blank"> This mini project was completed as part of the FastAi course.</a>
